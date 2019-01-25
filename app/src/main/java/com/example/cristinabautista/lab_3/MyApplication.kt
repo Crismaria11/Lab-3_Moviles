@@ -10,7 +10,7 @@ class MyApplication: Application() {
 
     var contact: ArrayList<Contact> = ArrayList()
 
-    fun add(name: String, phoneNumber: Int, email: String) {
+    fun add(name: String, phoneNumber: String, email: String) {
         val contact: Contact = Contact(name, phoneNumber, email)
         this.contact.add(contact)
     }

@@ -11,6 +11,8 @@ class MainActivity4 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main4)
 
+        val contactList = (this.application as MyApplication).contact
+
         val showButtonSend = findViewById<Button>(R.id.buttonSend)
         showButtonSend.setOnClickListener{val intent = Intent(this, MainActivity1::class.java)
             startActivity(intent)

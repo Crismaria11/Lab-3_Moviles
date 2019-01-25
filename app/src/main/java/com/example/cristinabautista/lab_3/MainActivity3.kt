@@ -11,6 +11,8 @@ class MainActivity3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
 
+        val contactList = (this.application as MyApplication).contact
+
         val showButtonBackContact = findViewById<Button>(R.id.buttonBackContact)
         showButtonBackContact.setOnClickListener{val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)

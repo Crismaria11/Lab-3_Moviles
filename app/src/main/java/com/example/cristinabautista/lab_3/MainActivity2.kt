@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.TextView
 import java.util.ArrayList
 
 class MainActivity2 : AppCompatActivity() {
@@ -14,7 +15,13 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-        val contactList = (this.application as MyApplication).contact
+        val contactList = (this.application as MyApplication)
+
+        val showTextName = findViewById<TextView>(R.id.textName)
+
+        val showTelefono = findViewById<TextView>(R.id.telefono)
+
+        val showCorreo = findViewById<TextView>(R.id.correo)
 
 
         val showButtonBack = findViewById<Button>(R.id.buttonBack)
@@ -23,16 +30,16 @@ class MainActivity2 : AppCompatActivity() {
         }
 
         val showButtonCreate = findViewById<Button>(R.id.buttonCreate)
-        showButtonCreate.setOnClickListener{val intent = Intent(this, MainActivity3::class.java)
+        showButtonCreate.setOnClickListener{val intent = Intent(this, MainActivity1::class.java)
+            contactList.add(showTextName.text.toString(), showTelefono.text.toString(), showCorreo.text.toString())
+
+
+
             startActivity(intent)
+
         }
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, contactList)
-        contactList.adapter = adapter
 
-        contactList.setOnClickListener = AdapterView.OnItemClickListener{parent, view, position, id ->
-            contact.
-        }
 
 
     }
@@ -40,11 +47,7 @@ class MainActivity2 : AppCompatActivity() {
 
 
 
-private var <E> ArrayList<E>.setOnClickListener: Unit
+/*private var <E> ArrayList<E>.setOnClickListener: Unit
     get() {}
 
-private var <E> ArrayList<E>.adapter: ArrayAdapter<Contact>
-    get() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-    set() {}
+        */
