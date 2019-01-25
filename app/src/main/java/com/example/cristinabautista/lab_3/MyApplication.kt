@@ -7,4 +7,5 @@ class MyApplication {
         val contact: Contact = Contact(name, phoneNumber, email)
         this.contact.add(contact)
     }
+
 }
